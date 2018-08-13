@@ -2,7 +2,6 @@ package com.jsict.hive;
 
 import java.io.Serializable;
 import java.sql.*;
-import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
@@ -34,7 +33,7 @@ public class GetPostHook extends AbstractSemanticAnalyzerHook {
 			throw new RuntimeException(e);
 		}
 		Set<ReadEntity> inputs = context.getInputs();
-		Set<WriteEntity> outputs = context.getOutputs();
+//		Set<WriteEntity> outputs = context.getOutputs();
 		
 		Set<String> readTables = new HashSet<String>();
 		for(ReadEntity input : inputs) {
@@ -88,7 +87,6 @@ public class GetPostHook extends AbstractSemanticAnalyzerHook {
 			}catch(SQLException se) {
 				se.printStackTrace();
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}finally {
 				try {
